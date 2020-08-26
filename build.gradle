@@ -1,0 +1,57 @@
+//构建脚本
+buildscript
+{
+    repositories 
+	{
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies
+	{
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+
+//项目基础
+version = "1.0"
+group = "com.wzhrdx.XenoAge"
+archivesBaseName = "XenoAge"
+
+
+sourceCompatibility = targetCompatibility = '1.8'
+
+compileJava
+{
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft
+{
+    version = "1.12.2-14.23.5.2768"
+    runDir = "run"
+    mappings = "stable_39"
+}
+
+//项目依赖
+dependencies
+{
+}
+
+processResources
+{
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+    from(sourceSets.main.resources.srcDirs)
+	{
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+    from(sourceSets.main.resources.srcDirs)
+	{
+        exclude 'mcmod.info'
+    }
+}

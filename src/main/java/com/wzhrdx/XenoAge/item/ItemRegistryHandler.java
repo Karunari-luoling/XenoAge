@@ -18,6 +18,7 @@ public class ItemRegistryHandler {
 
     public static Item SILVER_NUGGET = new ItemSilverNugget();
     public static final ItemBlock ITEM_SILVER_ORE = withRegistryName(new ItemBlock(BlockRegistryHandler.BLOCK_SILVER_ORE));
+    public static Item SILVER_INGOT = new ItemSilverIngot();
 
     public static ItemBlock withRegistryName(ItemBlock item){
         item.setRegistryName(item.getBlock().getRegistryName());
@@ -28,6 +29,7 @@ public class ItemRegistryHandler {
         IForgeRegistry<Item> registry = event.getRegistry();
         registry.register(SILVER_NUGGET);
         registry.register(ITEM_SILVER_ORE);
+        registry.register(SILVER_INGOT);
     }
 
     @SideOnly(Side.CLIENT)
@@ -40,6 +42,7 @@ public class ItemRegistryHandler {
     public static void onModelRegistry(ModelRegistryEvent event){
         registerModel(SILVER_NUGGET);
         registerModel(ITEM_SILVER_ORE);
+        registerModel(SILVER_INGOT);
     }
 
 }

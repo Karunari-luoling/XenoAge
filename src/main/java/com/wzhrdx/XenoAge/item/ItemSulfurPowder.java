@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 public class ItemSulfurPowder extends Item {
     public ItemSulfurPowder(){
         this.setCreativeTab(TabXenoAge.TAB_XENO_AGE);
-        this.setMaxStackSize(64);
+        this.setMaxStackSize(16);
         this.setRegistryName("sulfur_powder");
         this.setTranslationKey(XenoAge.MODID + ".sulfurpowder");
     }

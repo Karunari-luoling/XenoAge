@@ -19,6 +19,7 @@ public class ItemRegistryHandler {
     public static Item SILVER_NUGGET = new ItemSilverNugget();
     public static final ItemBlock ITEM_SILVER_ORE = withRegistryName(new ItemBlock(BlockRegistryHandler.BLOCK_SILVER_ORE));
     public static Item SILVER_INGOT = new ItemSilverIngot();
+    public static Item SULFUR_POWDER = new ItemSulfurPowder();
 
     public static ItemBlock withRegistryName(ItemBlock item){
         item.setRegistryName(item.getBlock().getRegistryName());
@@ -30,6 +31,7 @@ public class ItemRegistryHandler {
         registry.register(SILVER_NUGGET);
         registry.register(ITEM_SILVER_ORE);
         registry.register(SILVER_INGOT);
+        registry.register(SULFUR_POWDER);
     }
 
     @SideOnly(Side.CLIENT)
@@ -43,6 +45,7 @@ public class ItemRegistryHandler {
         registerModel(SILVER_NUGGET);
         registerModel(ITEM_SILVER_ORE);
         registerModel(SILVER_INGOT);
+        registerModel(SULFUR_POWDER);
     }
 
 }
